@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - NovaTech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .card {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .page-section {
+            padding: 80px 0;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            height: 100%;
+            transition: all 0.3s;
+        }
+        
+        .value-card:hover {
+            background-color: var(--light-color);
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">NovaTech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold">À propos de nous</h1>
+                    <p class="lead">Découvrez notre histoire, notre équipe et notre vision</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre histoire et mission -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Notre histoire</h2>
+                    <p>Fondée en 2015, NovaTech est née de la passion de ses fondateurs pour la technologie et l'innovation. Notre équipe s'est réunie avec une vision commune : créer des solutions digitales qui transforment la façon dont les entreprises interagissent avec leurs clients.</p>
+                    <p>Au fil des années, nous avons évolué d'une petite startup à une agence digitale reconnue, collaborant avec des entreprises de toutes tailles, des startups aux grandes entreprises.</p>
+                    
+                    <div class="timeline mt-5">
+                        <div class="timeline-item">
+                            <h5>2015</h5>
+                            <p>Création de NovaTech avec une équipe de 3 personnes</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>2017</h5>
+                            <p>Ouverture de notre premier bureau et expansion de l'équipe à 10 collaborateurs</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>2019</h5>
+                            <p>Lancement de notre département spécialisé en intelligence artificielle</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>2021</h5>
+                            <p>Ouverture d'un second bureau à Lyon et plus de 50 projets réalisés</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>2023</h5>
+                            <p>Équipe de 25 experts et plus de 150 clients satisfaits</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Notre équipe" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h2 class="section-title">Notre mission</h2>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h4>Notre Mission</h4>
+                        <p>Accompagner les entreprises dans leur transformation digitale en créant des solutions innovantes, performantes et centrées sur l'utilisateur.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h4>Notre Vision</h4>
+                        <p>Devenir le partenaire de référence pour les entreprises qui souhaitent tirer parti du numérique pour accélérer leur croissance.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Notre Engagement</h4>
+                        <p>Fournir un service d'excellence, des solutions sur mesure et un accompagnement personnalisé à chaque étape de votre projet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre équipe -->
+    <section class="page-section bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2 class="section-title d-inline-block">Notre équipe</h2>
+                    <p class="lead">Rencontrez les talents derrière NovaTech</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-4 team-member">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Thomas Martin" class="rounded-circle mx-auto mb-3">
+                        <h4>Thomas Martin</h4>
+                        <p class="text-primary">CEO & Fondateur</p>
+                        <p>Expert en stratégie digitale avec 10 ans d'expérience dans le secteur technologique.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-4 team-member">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Sophie Dubois" class="rounded-circle mx-auto mb-3">
+                        <h4>Sophie Dubois</h4>
+                        <p class="text-primary">Directrice Technique</p>
+                        <p>Développeuse full-stack passionnée par les nouvelles technologies et l'innovation.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-4 team-member">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Alexandre Moreau" class="rounded-circle mx-auto mb-3">
+                        <h4>Alexandre Moreau</h4>
+                        <p class="text-primary">Directeur Créatif</p>
+                        <p>Designer UX/UI avec un œil pour le détail et une passion pour les expériences utilisateur exceptionnelles.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center p-3 team-member">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Laura Petit" class="rounded-circle mx-auto mb-3">
+                        <h5>Laura Petit</h5>
+                        <p class="text-primary">Développeuse Front-end</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center p-3 team-member">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671d66?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Julien Bernard" class="rounded-circle mx-auto mb-3">
+                        <h5>Julien Bernard</h5>
+                        <p class="text-primary">Développeur Back-end</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center p-3 team-member">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Claire Leroy" class="rounded-circle mx-auto mb-3">
+                        <h5>Claire Leroy</h5>
+                        <p class="text-primary">Chef de Projet</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center p-3 team-member">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Émilie Roux" class="rounded-circle mx-auto mb-3">
+                        <h5>Émilie Roux</h5>
+                        <p class="text-primary">Spécialiste SEO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos valeurs -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2 class="section-title d-inline-block">Nos valeurs</h2>
+                    <p class="lead">Les principes qui guident notre travail au quotidien</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Innovation</h4>
+                        <p>Nous repoussons constamment les limites de la créativité et de la technologie pour offrir des solutions avant-gardistes à nos clients.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Collaboration</h4>
+                        <p>Nous travaillons en étroite collaboration avec nos clients, considérant chaque projet comme un partenariat basé sur la confiance et la transparence.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h4>Excellence</h4>
+                        <p>Nous visons l'excellence dans chaque détail, de la conception à la livraison, en garantissant la plus haute qualité pour tous nos projets.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Passion</h4>
+                        <p>Notre équipe est animée par une passion commune pour la technologie et le désir de créer des solutions qui font la différence.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Intégrité</h4>
+                        <p>Nous maintenons les plus hauts standards d'éthique professionnelle dans toutes nos interactions et décisions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Croissance</h4>
+                        <p>Nous nous engageons à favoriser la croissance de nos clients et à évoluer constamment pour rester à la pointe de notre secteur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre processus -->
+    <section class="page-section bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2 class="section-title d-inline-block">Notre processus</h2>
+                    <p class="lead">Comment nous travaillons pour garantir le succès de votre projet</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Découverte</h4>
+                        <p>Nous commençons par comprendre vos objectifs, votre public cible et vos défis pour définir une stratégie claire.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Conception</h4>
+                        <p>Nous créons des wireframes, maquettes et prototypes pour visualiser la solution avant le développement.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Développement</h4>
+                        <p>Notre équipe technique transforme les conceptions en solutions fonctionnelles avec un code de qualité.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Livraison</h4>
+                        <p>Nous testons rigoureusement, formons votre équipe et assurons un déploiement fluide de votre solution.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h3>Prêt à démarrer votre projet ?</h3>
+                    <p class="mb-4">Contactez-nous pour discuter de vos besoins et découvrir comment nous pouvons vous aider.</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>NovaTech</h5>
+                    <p>Nous créons des solutions digitales innovantes qui transforment votre entreprise et engagent votre audience.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none">Accueil</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none">À propos</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none">Services</a></li>
+                        <li><a href="portfolio.html" class="text-white text-decoration-none">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-white text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html#web-dev" class="text-white text-decoration-none">Développement Web</a></li>
+                        <li><a href="services.html#mobile-dev" class="text-white text-decoration-none">Applications Mobiles</a></li>
+                        <li><a href="services.html#digital-marketing" class="text-white text-decoration-none">Marketing Digital</a></li>
+                        <li><a href="services.html#seo" class="text-white text-decoration-none">SEO & Référencement</a></li>
+                        <li><a href="services.html#branding" class="text-white text-decoration-none">Branding & Design</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Rue de la Tech, Paris</li>
+                        <li><i class="fas fa-phone me-2"></i> +33 1 23 45 67 89</li>
+                        <li><i class="fas fa-envelope me-2"></i> contact@novatech.fr</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 NovaTech. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Politique de confidentialité</a>
+                    <a href="#" class="text-white text-decoration-none">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('bg-white', 'shadow-sm');
+            } else {
+                document.querySelector('.navbar').classList.remove('bg-white', 'shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>

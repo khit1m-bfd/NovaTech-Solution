@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - NovaTech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .card {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .page-section {
+            padding: 80px 0;
+        }
+        
+        .service-feature {
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            height: 100%;
+            transition: all 0.3s;
+        }
+        
+        .service-feature:hover {
+            background-color: var(--light-color);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-card {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.2);
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .price-period {
+            color: #6c757d;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 20px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">NovaTech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold">Nos Services</h1>
+                    <p class="lead">Des solutions digitales complètes pour faire grandir votre entreprise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2 class="section-title d-inline-block">Nos Domaines d'Expertise</h2>
+                    <p class="lead">Découvrez notre gamme complète de services pour transformer votre présence digitale</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4 id="web-dev">Développement Web</h4>
+                        <p>Création de sites web modernes, responsives et performants avec les dernières technologies.</p>
+                        <ul class="list-unstyled text-start mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i> Sites vitrines et e-commerce</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Applications web sur mesure</li>
+                            <li><i class="fas fa-check text-success me-2"></i> CMS (WordPress, Drupal)</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Maintenance et support</li>
+                        </ul>
+                        <a href="#web-development" class="btn btn-outline-primary mt-3">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4 id="mobile-dev">Applications Mobiles</h4>
+                        <p>Développement d'applications iOS et Android natives et hybrides pour votre entreprise.</p>
+                        <ul class="list-unstyled text-start mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i> Applications natives iOS/Android</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Applications hybrides (React Native)</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Applications PWA</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Publication sur les stores</li>
+                        </ul>
+                        <a href="#mobile-development" class="btn btn-outline-primary mt-3">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 id="digital-marketing">Marketing Digital</h4>
+                        <p>Stratégies de marketing digital sur mesure pour augmenter votre visibilité en ligne.</p>
+                        <ul class="list-unstyled text-start mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i> Stratégie de contenu</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Campagnes publicitaires</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Marketing des médias sociaux</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Email marketing automatisé</li>
+                        </ul>
+                        <a href="#digital-marketing-details" class="btn btn-outline-primary mt-3">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4 id="seo">SEO & Référencement</h4>
+                        <p>Optimisation pour les moteurs de recherche pour améliorer votre classement et votre visibilité.</p>
+                        <ul class="list-unstyled text-start mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i> Audit technique SEO</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Optimisation on-page</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Stratégie de backlinks</li>
+                            <li><i class="fas fa-check text-success me-2"></i> SEO local</li>
+                        </ul>
+                        <a href="#seo-details" class="btn btn-outline-primary mt-3">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4 id="branding">Branding & Design</h4>
+                        <p>Création d'identités visuelle fortes et de designs qui captivent votre audience.</p>
+                        <ul class="list-unstyled text-start mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i> Identité visuelle</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Design d'interface (UI/UX)</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Charte graphique</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Supports marketing</li>
+                        </ul>
+                        <a href="#branding-details" class="btn btn-outline-primary mt-3">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services -->
+    <section class="page-section bg-light" id="web-development">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Développement Web</h2>
+                    <p>Nous créons des sites web modernes, rapides et optimisés pour offrir la meilleure expérience utilisateur possible. Notre approche combine design élégant et technologies de pointe.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="service-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <h5>E-commerce</h5>
+                                <p>Boutiques en ligne complètes avec systèmes de paiement sécurisés et gestion des stocks.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h5>Applications Web</h5>
+                                <p>Solutions sur mesure pour automatiser vos processus et améliorer votre productivité.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="service-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <h5>Performance</h5>
+                                <p>Sites optimisés pour une vitesse de chargement maximale et un meilleur référencement.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h5>Sécurité</h5>
+                                <p>Protection avancée contre les menaces et sauvegardes régulières de vos données.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Développement Web" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section" id="mobile-development">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <h2 class="section-title">Applications Mobiles</h2>
+                    <p>Nous développons des applications mobiles natives et hybrides qui offrent une expérience utilisateur exceptionnelle sur tous les appareils.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="service-feature">
+                                <div class="feature-icon">
+                                    <i class="fab fa-apple"></i>
+                                </div>
+                                <h5>iOS Native</h5>
+                                <p>Applications optimisées pour iPhone et iPad avec Swift et les dernières technologies Apple.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-feature">
+                                <div class="feature-icon">
+                                    <i class="fab fa-android"></i>
+                                </div>
+                                <h5>Android Native</h5>
+                                <p>Applications performantes pour tous les appareils Android avec Kotlin et Java.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="service-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-mobile"></i>
+                                </div>
+                                <h5>Applications Hybrides</h5>
+                                <p>Solutions cross-platform avec React Native pour un développement plus rapide et économique.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h5>PWA</h5>
+                                <p>Applications web progressives qui fonctionnent comme des applications natives.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Applications Mobiles" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="page-section bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2 class="section-title d-inline-block">Nos Formules</h2>
+                    <p class="lead">Des solutions adaptées à tous les budgets et besoins</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="pricing-card">
+                        <h4>Starter</h4>
+                        <div class="price">€1,500</div>
+                        <div class="price-period">/ projet</div>
+                        <ul class="list-unstyled my-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Site web 5 pages</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Design responsive</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Hébergement 1 an</li>
+                            <li class="mb-2"><i class="fas fa-times text-muted me-2"></i> E-commerce</li>
+                            <li class="mb-2"><i class="fas fa-times text-muted me-2"></i> Maintenance incluse</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline-primary">Choisir cette formule</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="pricing-card featured">
+                        <span class="badge bg-primary position-absolute top-0 start-50 translate-middle px-3 py-2">Populaire</span>
+                        <h4>Business</h4>
+                        <div class="price">€3,500</div>
+                        <div class="price-period">/ projet</div>
+                        <ul class="list-unstyled my-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Site web 10 pages</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Design personnalisé</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Hébergement 1 an</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Module e-commerce basique</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Maintenance 3 mois</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Choisir cette formule</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="pricing-card">
+                        <h4>Enterprise</h4>
+                        <div class="price">€7,500</div>
+                        <div class="price-period">/ projet</div>
+                        <ul class="list-unstyled my-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Site web illimité</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Design sur mesure</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Hébergement 2 ans</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> E-commerce avancé</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Maintenance 1 an</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline-primary">Choisir cette formule</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">Questions Fréquentes</h2>
+                    
+                    <div class="faq-item">
+                        <h5>Combien de temps prend le développement d'un site web ?</h5>
+                        <p>Le délai varie selon la complexité du projet. Un site vitrine simple peut prendre 2-3 semaines, tandis qu'un site e-commerce complexe peut nécessiter 2-3 mois. Nous établissons un calendrier détaillé dès le début du projet.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h5>Proposez-vous des services de maintenance après la livraison ?</h5>
+                        <p>Oui, nous proposons différents plans de maintenance incluant mises à jour, sauvegardes, surveillance de sécurité et support technique. Ces services sont optionnels mais fortement recommandés.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h5>Pouvez-vous travailler avec notre équipe existante ?</h5>
+                        <p>Absolument. Nous nous intégrons parfaitement à vos processus et collaborons étroitement avec votre équipe. Nous pouvons également former vos collaborateurs à l'utilisation des solutions que nous développons.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h5>Quelle est votre politique de confidentialité ?</h5>
+                        <p>Nous signons des accords de confidentialité avec tous nos clients. Votre projet et vos données sont protégés. Nous ne partageons jamais d'informations confidentielles avec des tiers.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h5>Proposez-vous des révisions pendant le développement ?</h5>
+                        <p>Oui, nous incluons plusieurs phases de révision dans notre processus. Vous aurez l'opportunité de donner votre feedback à différentes étapes pour garantir que le résultat final corresponde parfaitement à vos attentes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Prêt à transformer votre présence digitale ?</h2>
+            <p class="lead mb-5">Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé</p>
+            <a href="contact.html" class="btn btn-light btn-lg me-3">Demander un devis</a>
+            <a href="portfolio.html" class="btn btn-outline-light btn-lg">Voir nos réalisations</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>NovaTech</h5>
+                    <p>Nous créons des solutions digitales innovantes qui transforment votre entreprise et engagent votre audience.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none">Accueil</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none">À propos</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none">Services</a></li>
+                        <li><a href="portfolio.html" class="text-white text-decoration-none">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-white text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html#web-dev" class="text-white text-decoration-none">Développement Web</a></li>
+                        <li><a href="services.html#mobile-dev" class="text-white text-decoration-none">Applications Mobiles</a></li>
+                        <li><a href="services.html#digital-marketing" class="text-white text-decoration-none">Marketing Digital</a></li>
+                        <li><a href="services.html#seo" class="text-white text-decoration-none">SEO & Référencement</a></li>
+                        <li><a href="services.html#branding" class="text-white text-decoration-none">Branding & Design</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Rue de la Tech, Paris</li>
+                        <li><i class="fas fa-phone me-2"></i> +33 1 23 45 67 89</li>
+                        <li><i class="fas fa-envelope me-2"></i> contact@novatech.fr</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 NovaTech. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Politique de confidentialité</a>
+                    <a href="#" class="text-white text-decoration-none">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('bg-white', 'shadow-sm');
+            } else {
+                document.querySelector('.navbar').classList.remove('bg-white', 'shadow-sm');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
